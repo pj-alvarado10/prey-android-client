@@ -8,19 +8,33 @@ buildscript {
             name 'Google'
         }
         google()
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.0'
         classpath 'com.google.gms:google-services:4.0.0'
+        classpath 'com.google.firebase:firebase-plugins:1.1.5'
+        classpath 'io.fabric.tools:gradle:1.25.4'
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+
 }
 
 allprojects {
     repositories {
+        google()
         jcenter()
         google()
+        maven {
+            url 'https://maven.google.com/'
+        }
     }
 }

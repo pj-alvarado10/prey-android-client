@@ -12,6 +12,7 @@ import android.os.Build;
 
 import com.appsflyer.AppsFlyerConversionListener;
 import com.appsflyer.AppsFlyerLib;
+import com.crashlytics.android.Crashlytics;
 import com.google.firebase.FirebaseApp;
 import com.prey.actions.aware.AwareController;
 import com.prey.actions.fileretrieval.FileretrievalController;
@@ -25,6 +26,7 @@ import com.prey.preferences.DisablePowerCheckBoxPreference;
 import com.prey.preferences.RunBackgroundCheckBoxPreference;
 import com.prey.services.PreyDisablePowerOptionsService;
 
+import io.fabric.sdk.android.Fabric;
 import org.json.JSONObject;
 
 import java.util.Date;
@@ -37,6 +39,7 @@ public class PreyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
         try {
             mLastPause = 0;
             PreyLogger.d("__________________");
