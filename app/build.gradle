@@ -14,10 +14,11 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 
+
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.firebase-perf'
 apply plugin: 'io.fabric'
-apply plugin: "org.sonarqube"
+
 
 
 android {
@@ -63,4 +64,5 @@ dependencies {
     implementation 'com.android.installreferrer:installreferrer:1.0'
     implementation 'com.google.firebase:firebase-perf:15.1.0'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.5'
+
 }
